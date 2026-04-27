@@ -1,0 +1,55 @@
+# .NET Build e publicação
+[Bb]in/
+[Oo]bj/
+out/
+[Pp]ublish/
+artifacts/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.vs/
+.idea/
+*.suo
+
+# Avalonia
+.avalonia/
+*.lscache
+
+# Arquivos específicos do usuário
+*.user
+*.userosscache
+*.sln.docstates
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+Logs/
+
+# Testes e cobertura
+TestResults/
+coverage/
+coverage.xml
+coverage.cobertura.xml
+*.trx
+
+# NuGet
+packages/
+*.nupkg
+
+# Arquivos temporários
+*.bak
+*.tmp
+*.temp
+*.swp
+*~
