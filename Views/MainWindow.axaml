@@ -15,6 +15,34 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid ColumnDefinitions="110,*">
+        <Border Grid.Column="0" ZIndex="1">
+            <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.05" Color="Black" OffsetY="-2"/>
+            </Border.Effect>    
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                    <GradientStop Color="#b5c0da" Offset="0.0"/>
+                    <GradientStop Color="#eef1fa" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            
+            <StackPanel Spacing="10">
+            </StackPanel>
+        </Border>
+        <Grid Grid.Column="1" ZIndex="0" RowDefinitions="200,*">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                    <GradientStop Color="#e2e6f1" Offset="0.0"/>
+                    <GradientStop Color="#f1f5ff" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackPanel Grid.Row="0" Spacing="5">
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    
 
 </Window>
