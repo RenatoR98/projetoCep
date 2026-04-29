@@ -1,0 +1,41 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+                        <Button Classes="SideBar"  HorizontalAlignment="Stretch" FontSize="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Classes="icon"  FontSize="14" Content="&#xE2C2;" VerticalAlignment="Center"></Label>
+                                <Label Content="Início" VerticalAlignment="Center"></Label>
+                            </StackPanel>
+                        </Button>
+    </Design.PreviewWith>
+
+    <Style Selector="Border.Divider">
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Background" Value="{DynamicResource DividerColor}"/>
+        <Setter Property="Margin" Value="2,2,2,2"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style Selector="Button.SideBar">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryText}"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <Style Selector="Button.SideBar:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SideBarButtonPointOverBrackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryText}"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.1"></BrushTransition>    
+            </Transitions>
+        </Setter>
+    </Style>
+
+
+
+    <Style Selector="Label.icon">
+        <Setter Property="Margin" Value="0 1 0 0"></Setter>
+    </Style>
+</Styles>

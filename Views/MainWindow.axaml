@@ -3,44 +3,80 @@
         xmlns:vm="using:projetoCep.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
+        Width="1024" Height="600"
         x:Class="projetoCep.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="projetoCep">
+        Icon="/Assets/Logo.ico"
+        Title="Projeto CEP">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
-    <Grid ColumnDefinitions="110,*">
-        <Border Grid.Column="0" ZIndex="1">
+    <Grid ColumnDefinitions="170,*">
+        <Border Grid.Column="0" ZIndex="1" Padding="15" Background="{DynamicResource SideBarBackground}">
             <Border.Effect>
-                    <DropShadowEffect BlurRadius="10" Opacity="0.05" Color="Black" OffsetY="-2"/>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.08" Color="Black" OffsetY="-2"/>
             </Border.Effect>    
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
-                    <GradientStop Color="#b5c0da" Offset="0.0"/>
-                    <GradientStop Color="#eef1fa" Offset="1.0"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            
-            <StackPanel Spacing="10">
-            </StackPanel>
-        </Border>
-        <Grid Grid.Column="1" ZIndex="0" RowDefinitions="200,*">
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
-                    <GradientStop Color="#e2e6f1" Offset="0.0"/>
-                    <GradientStop Color="#f1f5ff" Offset="1.0"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <StackPanel Grid.Row="0" Spacing="5">
 
-            </StackPanel>
-        </Grid>
+            
+            <Grid RowDefinitions="*, Auto" HorizontalAlignment="Center" Width="155">
+                <StackPanel Grid.Row="0" Spacing="5">
+                    <Grid ColumnDefinitions="Auto,*" >
+                        <Image Grid.Column="0" Source="/Assets/Logo.ico" Width="35" HorizontalAlignment="Left"></Image>
+                        <TextBlock Grid.Column="1" Text="  CEP" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
+                    </Grid>
+                        <Button Classes="SideBar"  HorizontalAlignment="Stretch" FontSize="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource Phosphor}" FontSize="14" Content="&#xE2C2;" FontWeight="Normal"></Label>
+                                <Label Content="Início" VerticalAlignment="Center"></Label>
+                            </StackPanel>
+                        </Button>
+                        <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource Phosphor}" FontSize="14" Content="&#xE198;" FontWeight="Normal"></Label>
+                                <Label Content="Lançar Medição" VerticalAlignment="Center"></Label>
+                            </StackPanel>    
+                        </Button>
+                        <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource Phosphor-Fill}" FontSize="14" Content="&#xE150;" FontWeight="Normal"></Label>
+                                <Label Content="Análise" VerticalAlignment="Center"></Label>
+                            </StackPanel>        
+                        </Button>
+                        <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource Phosphor}" FontSize="14" Content="&#xE19A;" FontWeight="Normal"></Label>
+                                <Label Content="Histórico" VerticalAlignment="Center"></Label>
+                            </StackPanel>       
+                        </Button>
+                        <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource Phosphor-Fill}" FontSize="14" Content="&#xE270;" FontWeight="Normal"></Label>
+                                <Label Content="Configurações" VerticalAlignment="Center"></Label>
+                            </StackPanel>       
+                        </Button>     
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Border Classes="Divider"></Border>
+                    <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="10">
+                        <StackPanel Orientation="Horizontal">
+                            <Label FontFamily="{DynamicResource Phosphor-Fill}" FontSize="14" Content="&#xEBA6;" Foreground="Green" FontWeight="Normal"></Label>
+                            <Label Content="DB: Conectado" VerticalAlignment="Center"></Label>
+                            <Label FontFamily="{DynamicResource Phosphor}" FontSize="14" Content="  &#xE0D0;" FontWeight="Normal"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Border Classes="Divider"></Border>
+                    <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="10">
+                        <StackPanel Orientation="Horizontal">
+                            <Label FontFamily="{DynamicResource Phosphor-Fill}" FontSize="14" Content="&#xE4C2;" FontWeight="Normal"></Label>
+                            <Label Content="Usuário: Renato" VerticalAlignment="Center"></Label>
+                        </StackPanel>    
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+        </Border>
+        <Border Grid.Column="1" ZIndex="0" Background="{DynamicResource BodyBackground}">
+
+        </Border>
     </Grid>
 
     
