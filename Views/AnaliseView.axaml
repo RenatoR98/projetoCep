@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:vm="using:projetoCep.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="projetoCep.AnaliseView">
+             x:Class="projetoCep.AnaliseView"
+             x:DataType="vm:AnaliseViewModel">
     <Border Padding="15">
         <Grid RowDefinitions="1*,1.2*,2.5*,2.5*" RowSpacing="5">
             <Border Grid.Row="0">
@@ -27,29 +29,11 @@
                         <Button Grid.Column="4" Background="Gray" FontSize="13" Content=":"></Button>
                     </Grid>
                     <Border Grid.Row="1" Classes="Divider"></Border>
-                    <lvc:CartesianChart Grid.Row="2" LegendPosition="Hidden" FontSize="5">
-                        <lvc:CartesianChart.Series>
-							<lvc:XamlLineSeries SeriesName="CL"
-                                                Values="{lvc:Values FromString='10, 11, 15, 8, 9, 6, 12, 13, 9, 10'}"
-                                                LineSmoothness="0"/>
-                        </lvc:CartesianChart.Series>
-                        <lvc:CartesianChart.Sections>
-							<lvc:XamlRectangularSection Yi="15"
-                                                        Yj="15"
-                                                        Label="UCL"
-                                                        Stroke="{lvc:SolidColorPaint
-                                                            Color='#6495ED',
-                                                            StrokeWidth=4,
-                                                            PathEffect={lvc:Dashed Array='30, 20'}}"/>
-                            <lvc:XamlRectangularSection Yi="5"
-                                                        Yj="5"
-                                                        Label="LCL"
-                                                        Stroke="{lvc:SolidColorPaint
-                                                            Color='#6495ED',
-                                                            StrokeWidth=4,
-                                                            PathEffect={lvc:Dashed Array='30, 20'}}"/>
-                        </lvc:CartesianChart.Sections>
-                    </lvc:CartesianChart>
+                    <lvc:CartesianChart Grid.Row="2" 
+                                        Classes="cep-chart"
+                                        Series="{Binding Line.Series}"
+                                        XAxes="{Binding Line.XAxes}"
+                                        YAxes="{Binding Line.YAxes}"/>
                 </Grid>
             </Border>
             <Border Grid.Row="3" Background="Black"></Border>
@@ -57,3 +41,27 @@
     </Border>
 
 </UserControl>
+
+<!--
+                        <lvc:CartesianChart.Series>
+							<lvc:XamlLineSeries SeriesName = "CL"
+                                                Values="{lvc:Values FromString='10, 11, 15, 8, 9, 6, 12, 13, 9, 10'}"
+                                                LineSmoothness="0"/>
+                        </lvc:CartesianChart.Series>
+                        <lvc:CartesianChart.Sections>
+							<lvc:XamlRectangularSection Yi = "15"
+                                                        Yj="15"
+                                                        Label="UCL"
+                                                        Stroke="{lvc:SolidColorPaint
+                                                            Color='#6495ED',
+                                                            StrokeWidth=4,
+                                                            PathEffect={lvc:Dashed Array = '30, 20'}}"/>
+                            < lvc:XamlRectangularSection Yi = "5"
+                                                        Yj="5"
+                                                        Label="LCL"
+                                                        Stroke="{lvc:SolidColorPaint
+                                                            Color='#6495ED',
+                                                            StrokeWidth = 4,
+                                                            PathEffect = { lvc:Dashed Array = '30, 20'}}"/>
+                        </ lvc:CartesianChart.Sections >
+-->

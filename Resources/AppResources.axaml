@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Add Resources Here -->
+
+              <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="SecondaryText">#46526f</SolidColorBrush>
+                    <SolidColorBrush x:Key="DividerColor">#22FFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="SideBarButtonPointOverBrackground">#e1e5f0</SolidColorBrush>
+                    <LinearGradientBrush x:Key="SideBarBackground" StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Color="#b5c0da" Offset="0.0"/>
+                        <GradientStop Color="#eef1fa" Offset="1.0"/>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush x:Key="BodyBackground" StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Color="#e2e5ee" Offset="0.0"/>
+                        <GradientStop Color="#f4f7fe" Offset="1.0"/>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush x:Key="SideBarButtonSelectedBackground" StartPoint="0%,50%" EndPoint="100%,50%">
+                        <GradientStop Color="#145ec7" Offset="0.0"/>
+                        <GradientStop Color="#2675dc" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="SecondaryText">#bfc6d0</SolidColorBrush>
+                    <SolidColorBrush x:Key="DividerColor">#22FFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="SideBarButtonPointOverBrackground">#161d25</SolidColorBrush>
+                    <SolidColorBrush x:Key="SideBarBackground">#0f1620</SolidColorBrush>
+                    <SolidColorBrush x:Key="BodyBackground">#080f19</SolidColorBrush>
+                    <LinearGradientBrush x:Key="SideBarButtonSelectedBackground" StartPoint="0%,50%" EndPoint="100%,50%">
+                        <GradientStop Color="#145ec7" Offset="0.0"/>
+                        <GradientStop Color="#2675dc" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
+            <FontFamily x:Key="Phosphor-Fill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
+</ResourceDictionary>
