@@ -33,6 +33,11 @@
         </Setter>
     </Style>
 
+    <Style Selector="Button.SideBar.Selected">
+        <Setter Property="Background" Value="{DynamicResource SideBarButtonSelectedBackground}"/>
+        <Setter Property="Foreground" Value="#bfc6d0"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
 
 
     <Style Selector="Label.icon">

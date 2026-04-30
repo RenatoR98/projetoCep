@@ -3,6 +3,8 @@
         xmlns:vm="using:projetoCep.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+        xmlns:view="using:projetoCep.Views"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
         x:Class="projetoCep.Views.MainWindow"
@@ -23,11 +25,11 @@
                         <Image Grid.Column="0" Source="/Assets/Logo.ico" Width="35" HorizontalAlignment="Left"></Image>
                         <TextBlock Grid.Column="1" Text="  CEP" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
                     </Grid>
-                        <Button Classes="SideBar"  HorizontalAlignment="Stretch" FontSize="12">
-                            <StackPanel Orientation="Horizontal">
-                                <Label FontFamily="{DynamicResource Phosphor}" FontSize="14" Content="&#xE2C2;" FontWeight="Normal"></Label>
-                                <Label Content="Início" VerticalAlignment="Center"></Label>
-                            </StackPanel>
+                    <Button Classes="SideBar"  HorizontalAlignment="Stretch" FontSize="12">
+                        <StackPanel Orientation="Horizontal">
+                            <Label FontFamily="{DynamicResource Phosphor}" FontSize="14" Content="&#xE2C2;" FontWeight="Normal"></Label>
+                            <Label Content="Início" VerticalAlignment="Center"></Label>
+                        </StackPanel>
                         </Button>
                         <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12">
                             <StackPanel Orientation="Horizontal">
@@ -35,7 +37,7 @@
                                 <Label Content="Lançar Medição" VerticalAlignment="Center"></Label>
                             </StackPanel>    
                         </Button>
-                        <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12">
+                        <Button Classes="SideBar" HorizontalAlignment="Stretch" FontSize="12" Command="{Binding GoAnaliseCommand}" Classes.Selected="{Binding IsAnalisesSelected}">
                             <StackPanel Orientation="Horizontal">
                                 <Label FontFamily="{DynamicResource Phosphor-Fill}" FontSize="14" Content="&#xE150;" FontWeight="Normal"></Label>
                                 <Label Content="Análise" VerticalAlignment="Center"></Label>
@@ -53,6 +55,7 @@
                                 <Label Content="Configurações" VerticalAlignment="Center"></Label>
                             </StackPanel>       
                         </Button>     
+                    <ToggleSwitch IsChecked="{Binding IsDarkMode}" OnContent="Dark" OffContent="Light"></ToggleSwitch>
                 </StackPanel>
                 <StackPanel Grid.Row="1">
                     <Border Classes="Divider"></Border>
@@ -75,7 +78,7 @@
             
         </Border>
         <Border Grid.Column="1" ZIndex="0" Background="{DynamicResource BodyBackground}">
-
+            <ContentControl Content="{Binding CurrentPage}"></ContentControl>
         </Border>
     </Grid>
 
