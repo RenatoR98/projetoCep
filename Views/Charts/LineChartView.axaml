@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="projetoCep.Views.Charts.LineChartView"
+             xmlns:chartVm="using:projetoCep.ViewModels.Charts"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:vm="using:projetoCep.ViewModels.Charts"
+             x:DataType="vm:LineChartViewModel">
+    <Grid>
+        <lvc:CartesianChart
+            Series="{Binding Series}"
+            XAxes="{Binding XAxes}"
+            YAxes="{Binding YAxes}">
+            <lvc:CartesianChart.Sections>
+				<lvc:XamlRectangularSection
+                    Yi="{Binding Min}"
+                    Yj="{Binding Min}"
+                    Stroke="{lvc:SolidColorPaint Color='#F00', StrokeWidth=3, PathEffect={lvc:Dashed Array='6,6'}}"/>
+            </lvc:CartesianChart.Sections>
+        </lvc:CartesianChart>
+    </Grid>
+</UserControl>

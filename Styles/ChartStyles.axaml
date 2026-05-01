@@ -3,20 +3,12 @@
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
   <Design.PreviewWith>
     <Border Padding="20">
-      <!-- Add Controls for Previewer Here -->
     </Border>
   </Design.PreviewWith>
 
-        <Style Selector="lvc|CartesianChart.cep-chart">
-
-        <!-- Tamanho do texto da legenda -->
-        <Setter Property="LegendTextSize" Value="10" />
-
-        <!-- Tamanho do texto do tooltip quando passa o mouse -->
-        <Setter Property="TooltipTextSize" Value="10" />
-
-
+    <Style Selector="lvc|CartesianChart.cep-chart">
+        <Setter Property="LegendTextSize" Value="7" />
+        <Setter Property="TooltipTextSize" Value="7" />
     </Style>
 
-  <!-- Add Styles Here -->
 </Styles>

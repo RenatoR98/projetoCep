@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace projetoCep.Views;
+namespace projetoCep.Views.Charts;
 
-public partial class AnaliseView : UserControl
+public partial class LineChartView : UserControl
 {
-    public AnaliseView()
+    public LineChartView()
     {
         InitializeComponent();
     }

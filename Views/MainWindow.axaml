@@ -6,14 +6,14 @@
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         xmlns:view="using:projetoCep.Views"
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
-        Width="1024" Height="600"
+        Width="1366" Height="768" MinWidth="1000" MinHeight="650" WindowState="Maximized"
         x:Class="projetoCep.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/Logo.ico"
         Title="Projeto CEP">
 
     <Grid ColumnDefinitions="170,*">
-        <Border Grid.Column="0" ZIndex="1" Padding="15" Background="{DynamicResource SideBarBackground}">
+        <Border Grid.Column="0" ZIndex="1" Padding="15" BorderBrush="{DynamicResource BorderColor}" BorderThickness="1" Background="{DynamicResource SideBarBackground}">
             <Border.Effect>
                     <DropShadowEffect BlurRadius="10" Opacity="0.08" Color="Black" OffsetY="-2"/>
             </Border.Effect>    

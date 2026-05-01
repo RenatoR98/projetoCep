@@ -1,59 +1,39 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using LiveChartsCore;
+using LiveChartsCore.Measure;
 using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
+using SkiaSharp;
 using System.Linq;
 
 namespace projetoCep.ViewModels.Charts;
 
 public partial class LineChartViewModel : ViewModelBase
 {
-    [ObservableProperty]
-    private ISeries[] series = [];
+    public double Min { get; set; } = 5;
+    public double Max { get; set; } = 15;
 
-    [ObservableProperty]
-    private Axis[] xAxes =
-    [
-        new Axis
-        {
-            Name = "Medição",
-            TextSize = 12,
-            NameTextSize = 13
-        }
-    ];
-
-    [ObservableProperty]
-    private Axis[] yAxes =
-    [
-        new Axis
-        {
-            Name = "Valor",
-            TextSize = 12,
-            NameTextSize = 13
-        }
-    ];
-
-    public void Atualizar(double[] valores, double valorFixo)
+    public ISeries[] Series { get; set; } = new ISeries[]
     {
-        double[] linhaFixa = valores
-            .Select(_ => valorFixo)
-            .ToArray();
+        new LineSeries<double>
+        {
+            Values = new double[] {10,15,12,9,8,11,7,8,11,13,7,5,11,10,14,7,10}
+        }
+    };
 
-        Series =
-        [
-            new LineSeries<double>
-            {
-                Values = valores,
-                Name = "Valor medido",
-                DataLabelsSize = 12
-            },
+    public Axis[] XAxes { get; set; } = new Axis[]
+    {
+        new Axis
+        {
+            TextSize = 7
+        }
+    };
 
-            new LineSeries<double>
-            {
-                Values = linhaFixa,
-                Name = "Referência",
-                GeometrySize = 0,
-                DataLabelsSize = 12
-            }
-        ];
-    }
+    public Axis[] YAxes { get; set; } = new Axis[]
+    {
+        new Axis
+        {
+            TextSize = 7
+        }
+    };
 }

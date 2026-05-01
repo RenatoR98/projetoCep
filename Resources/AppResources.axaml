@@ -4,6 +4,8 @@
 
               <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="BorderColor">Transparent</SolidColorBrush>
+                    <SolidColorBrush x:Key="CardBackground">#f5f6fb</SolidColorBrush>
                     <SolidColorBrush x:Key="SecondaryText">#46526f</SolidColorBrush>
                     <SolidColorBrush x:Key="DividerColor">#22FFFFFF</SolidColorBrush>
                     <SolidColorBrush x:Key="SideBarButtonPointOverBrackground">#e1e5f0</SolidColorBrush>
@@ -21,6 +23,8 @@
                     </LinearGradientBrush>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="BorderColor">#253649</SolidColorBrush>
+                    <SolidColorBrush x:Key="CardBackground">#0f1620</SolidColorBrush>
                     <SolidColorBrush x:Key="SecondaryText">#bfc6d0</SolidColorBrush>
                     <SolidColorBrush x:Key="DividerColor">#22FFFFFF</SolidColorBrush>
                     <SolidColorBrush x:Key="SideBarButtonPointOverBrackground">#161d25</SolidColorBrush>

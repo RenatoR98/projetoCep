@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace projetoCep;
+namespace projetoCep.Views;
 
 public partial class HomeView : UserControl
 {

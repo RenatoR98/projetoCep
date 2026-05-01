@@ -1,25 +1,22 @@
-﻿using Avalonia.Controls.Shapes;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using LiveChartsCore.SkiaSharpView.Avalonia;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using projetoCep.ViewModels.Charts;
 
 namespace projetoCep.ViewModels;
 
 public partial class AnaliseViewModel : ViewModelBase
 {
-    public LineChartViewModel Line { get; } = new();
+    public LineChartViewModel LineChart { get; private set; } = new();
+
+    [ObservableProperty]
+    private object? currentGraph1;
 
     public AnaliseViewModel()
     {
-        AtualizarGraficos();
+        SetLineChart();
     }
 
-    [RelayCommand]
-    private void AtualizarGraficos()
+    private void SetLineChart()
     {
-        double[] valores = { 10.2, 10.4, 10.1, 10.6, 10.5, 10.3 };
-        Line.Atualizar(valores, valorFixo: 10.5);
+        CurrentGraph1 = LineChart;
     }
-
 }

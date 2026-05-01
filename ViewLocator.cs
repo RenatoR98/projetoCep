@@ -3,7 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using projetoCep.ViewModels;
+using projetoCep.ViewModels.Charts;
 using projetoCep.Views;
+using projetoCep.Views.Charts;
 
 namespace projetoCep;
 
@@ -14,6 +16,7 @@ public class ViewLocator : IDataTemplate
         return data switch
         {
             AnaliseViewModel => new AnaliseView(),
+            LineChartViewModel => new LineChartView(),
             _ => new TextBlock { Text = $"No view for {data.GetType().Name}" }
         };
     }
